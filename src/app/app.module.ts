@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { TodoFormComponent } from './components/todo-form/todo-form.component';
+import { CounterComponent } from './components/counter/counter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoFormComponent,
+    CounterComponent,
   ],
   imports: [
     BrowserModule,
