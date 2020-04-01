@@ -1,27 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Store, select } from '@ngrx/store'
+import { State } from '../../reducers/counter.reducer'
+import { selectCount, selectCounterState } from '../../selectors/counter.selector';
+import * as CounterActions from '../../actions/counter.action';
 
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.scss']
 })
-export class CounterComponent implements OnInit {
-  count = 0;
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class CounterComponent {
+  count$ = this.store.pipe(select(selectCount));
+  constructor(private store: Store<State>) { }
 
   increment() {
-    this.count++;
+    this.store.dispatch(CounterActions.increment())
   }
 
   decrement() {
-    this.count--;
+    this.store.dispatch(CounterActions.decrement())
   }
 
   reset() {
-    this.count = 0;
+    this.store.dispatch(CounterActions.reset());
   }
 
 }
