@@ -1,5 +1,6 @@
 import { HelloButtonComponent } from '../app/components/hello-button/hello-button.component'
 import { action } from '@storybook/addon-actions';
+import { withKnobs, text } from '@storybook/addon-knobs';
 
 export default {
   title: 'HelloButton',
@@ -9,7 +10,7 @@ export default {
 export const Hisamitsu = () => ({
   component: HelloButtonComponent,
   props: {
-    name: 'hoge',
+    name: text('name', 'foo'),
     hello: action('clicked!'),
   },
 });
