@@ -8,12 +8,14 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { AppComponent } from './app.component';
 import { TodoFormComponent } from './components/todo-form/todo-form.component';
 import { CounterComponent } from './components/counter/counter.component';
+import { HelloButtonComponent } from './components/hello-button/hello-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoFormComponent,
     CounterComponent,
+    HelloButtonComponent,
   ],
   imports: [
     BrowserModule,
